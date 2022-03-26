@@ -1,0 +1,14 @@
+@import url("simpledotcss/simple.min.css");
+
+body header nav slinkity-mount-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body header nav img {
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px -2px var(--accent);
+  margin-right: 2rem;
+  max-height: 2rem;
+}

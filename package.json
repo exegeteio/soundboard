@@ -1,0 +1,18 @@
+{
+  "main": ".eleventy.js",
+  "scripts": {
+    "dev": "slinkity --serve --port=3000",
+    "build": "slinkity"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@slinkity/renderer-react": "^0.1.8",
+    "simpledotcss": "^2.0.6",
+    "slinkity": "^0.6.4"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^1.32.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

@@ -1,0 +1,7 @@
+# Local Netlify folder
+.netlify
+/_site
+/.vscode
+/node_modules
+.env*
+!/.env-sample
