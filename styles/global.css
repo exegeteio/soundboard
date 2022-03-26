@@ -12,3 +12,8 @@ body header nav img {
   margin-right: 2rem;
   max-height: 2rem;
 }
+
+body main fieldset input {
+  display: block;
+  margin-bottom: 1rem;
+}
