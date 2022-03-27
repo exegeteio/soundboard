@@ -24,6 +24,7 @@ export default function Sounds() {
                     href="#"
                     className="play"
                     onClick={(e) => {
+                      e.preventDefault();
                       setPlaying(sound);
                     }}
                   >
@@ -35,6 +36,7 @@ export default function Sounds() {
                     href="#"
                     className="stop"
                     onClick={(e) => {
+                      e.preventDefault();
                       setPlaying(null);
                     }}
                   >
@@ -45,6 +47,7 @@ export default function Sounds() {
                   href="#"
                   className="copy"
                   onClick={(e) => {
+                    e.preventDefault();
                     const el = document.getElementById(sound.id);
                     el.focus();
                     el.select();
@@ -66,6 +69,7 @@ export default function Sounds() {
                 <a
                   href="#"
                   onClick={(e) => {
+                    e.preventDefault();
                     if (
                       confirm(`Delete "${sound.label}"?  This is permanent!`)
                     ) {
