@@ -1,4 +1,4 @@
-// src/_includes/components/auth.jsx
+// src/_includes/components/upload.jsx
 
 import React, { useReducer, useState, useEffect } from "react";
 
