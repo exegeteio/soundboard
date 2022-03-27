@@ -1,40 +1,25 @@
 // src/_includes/components/auth.jsx
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { supabase } from "../../../lib/supabaseClient";
+import { getSession } from "../../../lib/supabase";
+
+const signIn = () => {
+  supabase.auth.signIn({ provider: "twitch" });
+};
+
+const signOut = async () => {
+  supabase.auth.signOut();
+};
 
 export default function Auth() {
-  const [user, setUserState] = useState(null);
+  const session = getSession();
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check active sessions and sets the user
-    const session = supabase.auth.session();
-
-    if (session) {
-      setUserState(session.user);
-    }
-
-    // Listen for changes on auth state (logged in, signed out, etc.)
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setUserState(session?.user);
-        console.debug("Signed in as:", session?.user);
-      }
-    );
-
-    return () => {
-      listener?.unsubscribe();
-    };
-  }, [supabase]);
-
-  const signIn = () => {
-    supabase.auth.signIn({ provider: "twitch" });
-  };
-
-  const signOut = async () => {
-    supabase.auth.signOut();
-  };
+    setUser(session?.user || null);
+  }, [session]);
 
   return (
     <>

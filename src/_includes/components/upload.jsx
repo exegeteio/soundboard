@@ -60,7 +60,7 @@ export default function Upload() {
     const uploadPath = `${inputs.user_id}/${insertData[0].id}.${inputs.extension}`;
 
     const { data: uploadData, error: uploadError } = await supabase.storage
-      .from("uploads")
+      .from("soundboard")
       .upload(uploadPath, inputs.file);
 
     if (uploadError) {
