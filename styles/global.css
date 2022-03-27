@@ -49,6 +49,11 @@ body main #sounds li a {
   text-decoration: none;
 }
 
+body main #sounds.false li a.play,
+body main #sounds.false li a.copy {
+  display: none;
+}
+
 body main #sounds li input {
   height: 1px;
   width: 1px;

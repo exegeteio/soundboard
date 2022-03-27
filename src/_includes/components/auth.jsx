@@ -1,25 +1,9 @@
 // src/_includes/components/auth.jsx
 
-import { useState, useEffect } from "react";
-
-import { supabase } from "../../../lib/supabaseClient";
-import { getSession } from "../../../lib/supabase";
-
-const signIn = () => {
-  supabase.auth.signIn({ provider: "twitch" });
-};
-
-const signOut = async () => {
-  supabase.auth.signOut();
-};
+import { getUser, signIn, signOut } from "../../../lib/supabase";
 
 export default function Auth() {
-  const session = getSession();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    setUser(session?.user || null);
-  }, [session]);
+  const user = getUser();
 
   return (
     <>
